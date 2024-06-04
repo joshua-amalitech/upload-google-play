@@ -333,6 +333,7 @@ async function uploadApk(appEditId: string, options: EditOptions, apkReleaseFile
 
 async function uploadBundle(appEditId: string, options: EditOptions, bundleReleaseFile: string): Promise<Bundle> {
     core.debug(`[${appEditId}, packageName=${options.applicationId}]: Uploading App Bundle @ ${bundleReleaseFile}`);
+    core.info(`[${appEditId}, packageName=${options.applicationId}]: Uploading App Bundle @ ${bundleReleaseFile}`);
     const res = await androidPublisher.edits.bundles.upload({
         auth: options.auth,
         packageName: options.applicationId,
